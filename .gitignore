@@ -1,0 +1,12 @@
+.idea/
+.backup
+.swp
+.undo
+dist/
+variables.yaml
+*~
+*.egg-info/
+*.iml
+*.zip
+build/
+*.pyc
