@@ -20,6 +20,10 @@ Here are some of the current limitations.
     + Need to mock away the websocket bits.
 - This documentation.
 
+# Installation
+
+    pip install interloper
+
 # Usage
 
 For starters, one must [enable ECS exec](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html#ecs-exec-enabling-and-using).
