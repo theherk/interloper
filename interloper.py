@@ -88,7 +88,9 @@ def session_reader(session: dict) -> str:
         "Payload" / c.PaddedString(c.this.PayloadLength, "ascii"),
     )
 
-    connection = websocket.create_connection(session["streamUrl"])
+    connection = websocket.create_connection(
+        session["streamUrl"], sslopt={"cert_reqs": ssl.CERT_NONE}
+    )
     try:
         init_payload = {
             "MessageSchemaVersion": "1.0",
