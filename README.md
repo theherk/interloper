@@ -1,8 +1,6 @@
 # interloper
 
-Tool to run ecs execute command in lambda. Of course, locally you can do this via the session manager plugin, but it you want to do it in lambda, it is a bit more complex.
-
-More documentation is required.
+Tool to run ecs execute command in Python and in AWS Lambda. Of course, locally you can do this via the session manager plugin, but it you want to do it in lambda, it is a bit more complex.
 
 ## Features
 
