@@ -54,26 +54,33 @@ class Interloper:
             "interactive": True,
             "command": cmd,
         }
+        LOG.debug("exec params: %s", params)
         if self.cluster:
             params["cluster"] = self.cluster
         if self.container:
             params["container"] = self.container
         exec_resp = boto3.client("ecs").execute_command(**params)
+        LOG.debug("exec response: %s", exec_resp)
         return session_reader(exec_resp["session"])
 
     def cmd(self, cmd: str) -> str:
-        LOG.debug("interloping with simple command...")
+        LOG.info("interloping with simple command...")
+        LOG.info(cmd)
         return self._exec(cmd)
 
     @staticmethod
     def fmt_cmd(filename: str, args: List[str]) -> str:
         with open(filename, "rb") as f:
             script = f.read()
-        return CMD_TMPL.format(base64.b64encode(script).decode(), " ".join(args))
+        cmd = CMD_TMPL.format(base64.b64encode(script).decode(), " ".join(args))
+        LOG.debug("formatted script cmd: \n%s", cmd)
+        return cmd
 
     def script(self, filename: str, args: List[str] = None) -> str:
-        LOG.debug("interloping with script...")
+        LOG.info("interloping with script...")
+        LOG.info(filename)
         args = args or []
+        LOG.debug("script args: %s", args)
         return self._exec(self.fmt_cmd(filename, args))
 
 
