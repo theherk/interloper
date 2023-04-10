@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 import base64
-from dataclasses import dataclass
 import json
-from json.decoder import JSONDecodeError
 import logging
+import ssl
 import sys
-from typing import List
 import uuid
+from dataclasses import dataclass
+from typing import List
 
 import boto3
 import construct as c
