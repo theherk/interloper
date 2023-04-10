@@ -1,12 +1,14 @@
 .idea/
 .backup
 .swp
+.terraform*
 .undo
 dist/
 variables.yaml
 *~
 *.egg-info/
 *.iml
+*.tfstate*
 *.zip
 build/
 *.pyc
