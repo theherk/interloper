@@ -193,6 +193,9 @@ def script_handler(event: dict, context) -> None:
 
 if __name__ == "__main__":
     LOG.addHandler(logging.StreamHandler(sys.stdout))
+    LOG_LEVEL = os.environ.get("LOG_LEVEL")
+    if LOG_LEVEL:
+        LOG.setLevel(getattr(logging, LOG_LEVEL))
     event = json.loads(sys.argv[1])
     if "cmd" in event:
         cmd_handler(event, None)

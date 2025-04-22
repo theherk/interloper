@@ -12,7 +12,6 @@ Tool to run ecs execute command in Python and in AWS Lambda. Of course, locally 
 
 Here are some of the current limitations.
 
-- Script output is truncated if very long.
 - Testing shell is present, but still must be completed.
     + Still needs started really.
     + Need to mock away the websocket bits.
