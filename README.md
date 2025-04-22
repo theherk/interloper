@@ -30,6 +30,10 @@ For starters, one must [enable ECS exec](https://docs.aws.amazon.com/AmazonECS/l
 
     ./interloper.py [event]
 
+> [!note]
+> If `cmd` is given in the event, the `cmd_handler` is used.
+> Otherwise, the `script_handler` is used.
+
 ## Lambda
 
 You can import and use the provided handlers for simple operations.

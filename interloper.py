@@ -194,4 +194,7 @@ def script_handler(event: dict, context) -> None:
 if __name__ == "__main__":
     LOG.addHandler(logging.StreamHandler(sys.stdout))
     event = json.loads(sys.argv[1])
-    script_handler(event, None)
+    if "cmd" in event:
+        cmd_handler(event, None)
+    else:
+        script_handler(event, None)
