@@ -6,15 +6,12 @@ import os
 import ssl
 import sys
 import time
-import traceback
 import uuid
 from dataclasses import dataclass
 from typing import List
 
 import boto3
-import construct as c
 import websocket
-from websocket import WebSocketConnectionClosedException
 
 LOG = logging.getLogger()
 LOG.setLevel(logging.INFO)
